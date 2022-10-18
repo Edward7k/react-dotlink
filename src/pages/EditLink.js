@@ -137,7 +137,7 @@ const EditLink = () => {
               </div>
             </form>
           </div>
-          <div className='w-3/4 md:w-4/12'>
+          <div className='w-3/4 md:w-1/4'>
             <Locations />
           </div>
         </div>

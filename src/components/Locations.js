@@ -31,7 +31,7 @@ const Locations = () => {
   }, []);
   return (
     <div>
-      <div className="flex flex-col md:w-1/4 mx-4 mt-5 md:mt-0">
+      <div className="flex flex-col md:w-full md:mt-0">
         <h1 className="text-gray-500 md:text-lg md:mb-5">کشور بازدیدکنندگان</h1>
         {data.map((e, index) => (
           <div

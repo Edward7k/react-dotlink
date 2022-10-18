@@ -35,7 +35,13 @@ function App() {
             isAuthenticated ? <Navigate to="/dashboard" /> : <Register />
           }
         />
-        <Route path="/" element={<Home />} exact />
+        <Route
+          path="/"
+          exact
+          element={
+            isAuthenticated ? <Navigate to="/dashboard" /> : <Home />
+          }
+        />
       </Routes>
     </div>
   );
