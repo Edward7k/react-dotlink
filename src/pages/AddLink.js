@@ -11,6 +11,7 @@ const AddLink = () => {
   const [error, setError] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false)
+  const [link, setLink] = useState('')
 
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -32,7 +33,7 @@ const AddLink = () => {
       console.log(response);
       setLoading(false);
       setSuccess(true);
-
+      setLink("https://dotlink-front.herokuapp.com/l/"+response.data.url_code)
       const timeId = setTimeout(() => {
         // After 3 seconds set the show value to false
         setSuccess(false)
@@ -61,6 +62,7 @@ const AddLink = () => {
             دات لینک
           </h1>
           <form className="w-full max-w-sm" onSubmit={handleSubmit}>
+            {link ? <a href={link} className="flex text-white bg-blue-500 rounded-lg text-sm py-2 px-4 mb-3">{link}</a> : null}
             {success ? <p className="text-white bg-green-500 rounded-lg text-sm py-2 px-4 mb-3">لینک با موفقیت ثبت شد</p> : null}
             {error ? <p className="text-red-500 text-sm">{error.title}</p> : null}
             <input
