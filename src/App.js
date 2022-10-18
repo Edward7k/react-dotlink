@@ -12,7 +12,7 @@ import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 
 function App() {
-  const isAuthenticated = localStorage.getItem("r_token");
+  const isAuthenticated = localStorage.getItem("token");
 
   return (
     <div>
