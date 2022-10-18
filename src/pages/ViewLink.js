@@ -7,9 +7,10 @@ const ViewLink = () => {
 
   const getData = async (url_code) => {
     try {
-      const response = await axios.get(
-        "https://dotlinkbackend.herokuapp.com/api/shortener/link/" + url_code,
+      const response = await axios.post(
+        "https://dotlinkbackend.herokuapp.com/api/shortener/link/",
         {
+          url_code,
           has_seen: localStorage.getItem('has_seen') ? 1 : 0
         }
       );
